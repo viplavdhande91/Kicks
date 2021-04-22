@@ -1,0 +1,353 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+	<!-- Hero section -->
+	<section class="hero-section" style="margin-top: 100px;position: static">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item set-bg" data-setbg="{% static 'img/hero1.jpg' %}">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 text-white">
+							<span style="color: #000000"></span>
+							<h2 style="color: #000000">ADDIDAS SHOES</h2>
+							<p style="color: #000000"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</strong> </p>
+							<a href="#" class="site-btn sb-line" style="background: #bf40bf;">DISCOVER</a>
+							<a href="#" class="site-btn sb-white" style="background:#ffa31a;">ADD TO CART</a>
+						</div>
+					</div>
+					<div class="offer-card text-white" >
+						<span>from</span>
+						<h3>&#8377; 2900</h3>
+						<p>SHOP NOW</p>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="{% static 'img/hero2.jpg' %}">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 text-white">
+							<span style="color:#000000" >New Arrivals</span>
+							<h2 style="color:#000000" >NIKE SHOES</h2>
+							<p style="color:#000000"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</strong> </p>
+							<a href="#" class="site-btn sb-line" style="background: #bf40bf;">DISCOVER</a>
+							<a href="#" class="site-btn sb-white" style="background:#ffa31a;">ADD TO CART</a>
+						</div>
+					</div>
+					<div class="offer-card text-white">
+						<span>from</span>
+						<h3>&#8377; 3500</h3>
+						<p>SHOP NOW</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="slide-num-holder" id="snh-1"></div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+
+
+
+
+
+ <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="{% static 'img/banner-1.jpg' %}" alt="">
+                        <div class="inner-text">
+                            <h4>Men’s</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="{% static 'img/banner-2.jpg' %}" alt="">
+                        <div class="inner-text">
+                            <h4>Women’s</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="{% static 'img/banner-3.jpg' %}" alt="">
+                        <div class="inner-text">
+                            <h4>Kid’s</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+
+
+
+
+
+	<!-- Features section -->
+	<section class="features-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner">
+						<div class="feature-icon">
+							<img src="{% static 'img/icons/1.png' %}" alt="#">
+						</div>
+						<h2>FAST SECURE PAYMENTS</h2>
+					</div>
+				</div>
+
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner" style="background: #CE98BE;">
+						<div class="feature-icon" >
+							<img src="{% static 'img/icons/2.png' %}" alt="#">
+						</div>
+						<h2>Premium Products</h2>
+					</div>
+				</div>
+
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner">
+						<div class="feature-icon">
+							<img src="{% static 'img/icons/3.png' %}" alt="#">
+						</div>
+						<h2>Free & fast Delivery</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Features section end -->
+
+
+    <!-- Deal Of The Week Section Begin-->
+    <section class="deal-of-week set-bg spad" data-setbg="{% static 'img/time-bg.jpg' %}">
+        <div class="container">
+            <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h2>Deal Of The Week</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
+                        consectetur adipisicing elit </p>
+                    <div class="product-price">
+                       &#8377; 3500
+                        <span>/ HanBag</span>
+                    </div>
+                </div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="cd-item">
+                        <span id="days">56</span>
+                        <p>Days</p>
+                    </div>
+                    <div class="cd-item">
+                        <span id="Hrs">12</span>
+                        <p>Hrs</p>
+                    </div>
+                    <div class="cd-item">
+                        <span id="mins">40</span>
+                        <p>Mins</p>
+                    </div>
+                    <div class="cd-item">
+                        <span id="Secs">52</span>
+                        <p>Secs</p>
+                    </div>
+                </div>
+                <a href="#" ><div class="primary-btn">Shop Now</div>   </a>
+            </div>
+        </div>
+
+
+ <script>
+// Set the date we're counting down to
+var countDownDate = new Date("July 5, 2020 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("Secs").innerHTML =  seconds  ;
+      document.getElementById("mins").innerHTML = minutes ; 
+  document.getElementById("Hrs").innerHTML = hours ;
+  document.getElementById("days").innerHTML = days ;
+
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+    </section>
+    <!-- Deal Of The Week Section End -->
+
+
+
+<!-- Instagram Section Begin -->
+    <div class="instagram-photo">
+        <div class="insta-item set-bg" data-setbg="{% static 'img/insta-1.jpg' %}">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">patil_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="{% static 'img/insta-2.jpg' %}">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">patil_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="{% static 'img/insta-3.jpg' %}">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">patil_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="{% static 'img/insta-4.jpg' %}">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">patil_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="{% static 'img/insta-5.jpg' %}">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">patil_Collection</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="{% static 'img/insta-6.jpg' %}">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">patil_Collection</a></h5>
+            </div>
+        </div>
+    </div>
+    <!-- Instagram Section End -->
+
+
+
+
+	<!-- letest product section -->
+	<section class="top-letest-product-section ">
+		<div class="container">
+			<div class="section-title" >
+				<h2 >LATEST PRODUCTS</h2>
+			</div> 
+			<div class="product-slider owl-carousel">
+
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="{% static 'img/product/22.jpg' %}" alt="">
+						<div class="pi-links">
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Flamboyant Pink Top </p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<div class="tag-new">New</div>
+						<img src="{% static 'img/product/33.jpg' %}" alt="">
+						<div class="pi-links">
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Black and White Stripes Dress</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="{% static 'img/product/44.jpg' %}" alt="">
+						<div class="pi-links">
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Flamboyant Pink Top </p>
+					</div>
+				</div>
+				<div class="product-item">
+						<div class="pi-pic">
+							<img src="{% static 'img/product/55.jpg' %}" alt="">
+							<div class="pi-links">
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Flamboyant Pink Top </p>
+						</div>
+					</div>
+				<div class="product-item">
+						<div class="pi-pic">
+							<img src="{% static 'img/product/66.jpg' %}" alt="">
+							<div class="pi-links">
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Flamboyant Pink Top </p>
+						</div>
+					</div>
+			</div>
+		</div>
+
+
+ <div class="text-center pt-5" s>
+		<a href="{% url 'category_main' %}">
+			<button class="site-btn sb-line sb-dark" >LOAD MORE</button> <a>
+</div>
+	</section>
+	<!-- latest product section end -->
+
+
+
+	<!-- Banner section -->
+	<section class="banner-section">
+		<div class="container">
+			<div class="banner set-bg" data-setbg="{% static 'img/banner-bg.jpg' %}">
+				<div class="tag-new">NEW</div>
+				<span>New Arrivals</span>
+				<h2>STRIPED SHIRTS</h2>
+				<a href="#" class="site-btn" style="background:#ff8533;">SHOP NOW</a>
+			</div>
+		</div>
+	</section>
+	<!-- Banner section end  -->
+
+
+
+  <link rel="stylesheet" href="{% static 'css/fashi/signup.css' %}"/> 
+
+
+    {% endblock %}	

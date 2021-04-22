@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html' %}
+
+  {% load static %}
+
+{% block content %}
+
+<div style="margin-top: 130px">
+<h1>Redirecting you to the merchant....</h1>
+<h1>Please do not refresh your page....</h1>
+<form action="https://securegw.paytm.in/order/process" method="POST" name="paytm">
+    {% for key, value in param_dict.items %}
+    <input type="hidden" name="{{key}}" value="{{value}}">
+    {% endfor %}
+
+</form>
+</div>
+
+<script>
+document.paytm.submit()
+</script>
+
+
+{% endblock %}

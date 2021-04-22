@@ -1,0 +1,254 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters  %}
+
+{% load humanize %} 
+{% block content %}
+	<!-- Page info -->
+	<div class="page-top-info"  style="padding: 5px 0 5px">
+		<div class="container">
+			<h4>Your cart</h4>
+			<div class="site-pagination">
+				<a href="">Home</a> /
+				<a href="">Your cart</a>
+			</div>
+		</div>
+	</div>
+	<!-- Page info end -->
+
+
+	<!-- checkout section  -->
+	<section class="checkout-section spad" style="margin-top: 90px">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 order-2 order-lg-1">
+					
+
+					<form class="checkout-form" action="place_order" method="POST" novalidate>
+											
+												{% csrf_token %}
+
+						<div class="cf-title">Billing Address</div>
+						
+
+						<div class="row">
+							<div class="col-md-7">
+								<p>*Billing Information</p>
+							</div>
+							<div class="col-md-5">
+								<div class="cf-radio-btns address-rb">
+									<div class="cfr-item">
+										<input type="radio" name="pm" id="one">
+										<label for="one">Use my regular address</label>
+									</div>
+									<div class="cfr-item">
+										<input type="radio" name="pm" id="two">
+										<label for="two">Use a different address</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row address-inputs">
+							
+							<div class="col-md-12">
+								<input type="text" placeholder="Address(Area and Street)" id="addr1"  name="addr1">
+							</div>
+
+							<div class="col-md-6">
+								<input type="text" placeholder="Landmark " id="landmark1"  name="landmark1">
+							</div>
+
+							<div class="col-md-6">
+								<input type="text" placeholder="Locality " id="locality"  name="locality">
+							</div>
+
+							<div class="col-md-6">
+								<input type="text" placeholder="City" id="city"  name="city">
+
+							</div>
+
+							<div class="col-md-6">
+								<input type="text" placeholder="Zip code" id="zip_code"  name="zip_code">
+							</div>
+
+							<div class="col-md-6">
+
+								<input type="text" placeholder="State" id="stateofuser"  name="stateofuser">
+							</div>
+							
+
+							
+						
+
+							<div class="col-md-6">
+								<input type="text" placeholder="Country" id="country_id"  name="country_id">
+							</div>
+
+								<div class="col-md-6">
+								<input type="text" placeholder="10 digit Mobile no" id="phone_no"  name="phone_no">
+							</div>
+
+							<div class="col-md-6">
+								<input type="text" placeholder="Alternate Phone no" id="alt_phone_no"  name="alt_phone_no">
+							</div>
+						</div>
+						
+
+
+
+						<div class="cf-title">Payment</div>
+							<div class="row shipping-btns">
+
+
+						   <div class="col-6" >
+						   	<span >
+						   <img src="{% static 'img/cards.png' %}" alt="" width="205" height="25">
+
+						    <h4>UPI/Credit card/ Debit card/Online Banking</h4>
+
+						   	</span>
+                                   
+							</div>
+							
+							
+						  <div class="col-6">
+								<div class="cf-radio-btns">
+									<div class="cfr-item">
+										<input type="radio" name="ship-22" id="ship-22"  value ="OnlinePayment" class="inputpayment">
+										<label for="ship-22" >Free</label>
+									</div>
+								</div>
+							</div>
+
+							
+							
+										
+
+							<div class="col-6" >
+								<span ><img src="{% static 'img/cod.png' %}" alt="" width="25" height="25">                                    
+									<h4 style="display: inline-block;margin-top: 70px">Pay On Delivery</h4>
+                                </span>
+                             </div>
+
+
+                             <div class="col-6">
+								<div class="cf-radio-btns">
+									<div class="cfr-item" style="margin-top: 70px">
+										<input type="radio" name="ship-22" id="ship-23"  value ="CashOnDelivery" class="inputpayment" >
+										<label for="ship-23" >Free</label>
+									</div>
+								</div>
+							</div>
+
+
+						<div  class="col-6" style="margin-top: 25px">
+								
+						<input type="checkbox" id="confirm" name="confirm" value="1">
+                        <label for="vehicle1"> I confirm my order</label><br>
+							</div>
+								
+							
+
+
+
+							</div>
+
+						
+						
+ 
+					
+						<button class="site-btn submit-order-btn"  id="placebutton" style="	width: 80%;border-radius: 10px;background: coral">Place Order</button>
+					</form>
+
+
+
+       
+
+
+				</div>
+
+
+				<div class="col-lg-4 order-1 order-lg-2">
+
+
+					<div class="checkout-cart" style="width: 400px">
+						<h3>Your Cart</h3>
+						<ul class="product-list">
+							<li >
+								{% for entry in finalds %}
+
+								<div class="pl-thumb"><img src="{% static entry.3 %}" alt=""></div>
+								
+                                <h6>{{ entry.4 }}</h6>
+								<h6 style="font-weight: normal;margin-bottom: -15px;"> {{ entry.1 }}</h6>
+							    <h6 style="font-weight: normal;margin-bottom: -15px;">Quantity : {{ entry.7 }}</h6>
+						        <h6 style="font-weight: normal;margin-bottom: -15px;">Size : {{ entry.6 }}</h6>
+						        {% with v1=entry.5 v2=entry.7 %}
+						         
+						          <h6 style="font-weight: normal;">Total : {{ v1|mul:v2  }} Rs</h6>
+						         
+						          {% endwith %}
+
+								
+                                 <hr>
+
+
+						        {% endfor %}
+
+							</li>
+							
+						</ul>
+						<ul class="price-list">
+							<li>Total : {{ final_sum }} Rs</li>
+							<li>Shipping :  {{ shipping_charges|intcomma }} Rs </li>
+							<li class="total">Total :  {{ final_sum }} Rs</li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- checkout section end -->
+
+
+<script type="text/javascript">
+	  
+
+
+
+$( document ).ready(function() {
+
+var amount = {{ final_sum }};
+amount = parseFloat(amount);
+
+//alert(amount);
+
+      $.ajax({
+
+
+        url: '{% url 'charge_val_get'  %}',
+        data: {
+          'amount':amount,
+        },
+        dataType: 'json',
+        success: function (data) {
+        
+
+
+        
+
+        }
+      });
+
+    });
+
+
+       
+    
+</script>
+			{% endblock %}

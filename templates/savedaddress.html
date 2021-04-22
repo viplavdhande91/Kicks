@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load humanize %} 
+{% block content %}
+
+<h3><p> Saved Addreses</p></h3>
+<div class="row" style="margin: 10px">
+
+<div class="card bg-light mb-3" style="max-width: 26rem;margin:10px;margin-top: 150px">
+  <div class="card-header">Address</div>
+  <div class="card-body">
+    <h5 class="card-title">Light card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+
+   <div class="card-body">
+    <h5 class="card-title">Edit Adress</h5>
+
+      <form class="checkout-form" action="" method="POST" novalidate>
+                             
+            <div class="row address-inputs">
+              
+              <div class="col-md-12">
+                <input type="text" placeholder="Address(Area and Street)" id="addr1"  name="addr1">
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" placeholder="Landmark (Optional)" id="landmark1"  name="landmark1">
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" placeholder="Locality (Optional)" id="locality"  name="locality">
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" placeholder="City" id="city"  name="city">
+
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" placeholder="Zip code" id="zip_code"  name="zip_code">
+              </div>
+
+              <div class="col-md-6">
+
+                <input type="text" placeholder="State" id="stateofuser"  name="stateofuser">
+              </div>
+              
+
+              
+            
+
+              <div class="col-md-6">
+                <input type="text" placeholder="Country" id="country_id"  name="country_id">
+              </div>
+
+                <div class="col-md-4">
+                <input type="text" placeholder="10 digit Mobile no" id="phone_no"  name="phone_no">
+              </div>
+
+              <div class="col-md-4">
+                <input type="text" placeholder="Alternate Phone no(Optional)" id="alt_phone_no"  name="alt_phone_no">
+              </div>
+            </div>
+           
+
+
+
+            
+          
+            <button class="site-btn submit-order-btn"  id="placebutton">Save</button>
+          </form>
+
+  </div>
+</div>
+
+
+
+
+</div>
+{% endblock %}

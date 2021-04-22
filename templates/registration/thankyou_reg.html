@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters  %}
+
+{% load humanize %} 
+{% block content %}
+
+
+<div class="container">
+	<div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+        <br><br> <h2 style="color:#0fad00">Success</h2>
+        <img src="{% static 'img/signup_thank.png' %}">
+        <h3>Dear, Customer</h3>
+        <p style="font-size:20px;color:#5C5C5C;">You have succesfullly signed up.</p>
+        <a href="{% url 'view_login' %}"   class="btn btn-success">     Go to Login page      </a>
+    <br><br>
+        </div>
+        
+	</div>
+</div>
+
+
+            {% endblock %}

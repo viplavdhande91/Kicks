@@ -1,0 +1,736 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% load humanize %} 
+{% block content %}
+
+
+
+
+	<!-- Page info -->
+	<div class="page-top-info" style="padding: 5px 0 5px; ">
+		<div class="container" >
+			<h4>SPORTS SHOES</h4>
+			<div class="site-pagination">
+				<a href="{% url 'index' %}">Home</a> /
+				<a href="{% url 'category_main' %}">Category</a>
+			</div>
+		</div>
+	</div>
+	<!-- Page info end -->
+
+
+	<!-- product section -->
+	<section class="product-section">
+		<div class="container">
+			
+			<div class="row">
+
+
+				<div class="col-lg-6">
+					<div class="product-pic-zoom">
+						<img class="product-big-img"  src= "{% static image_path1 %}"  alt="">
+					</div>
+
+
+
+					<div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
+						<div class="product-thumbs-track">
+							<div class="pt active" data-imgbigurl="{% static image_path1 %}">
+								<img src="{% static image_thumbpath1 %}" alt="">
+							</div>
+							
+							<div class="pt" data-imgbigurl="{% static image_path2 %}">
+								<img src="{% static image_thumbpath2 %}" alt="">
+							</div>
+							
+							<div class="pt" data-imgbigurl="{% static image_path3 %}">
+								<img src="{% static image_thumbpath3 %}" alt="">
+							</div>
+							
+							<div class="pt" data-imgbigurl="{% static image_path4 %}">
+								<img src="{% static image_thumbpath4 %}" alt="">
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="col-lg-6 product-details"  >
+					<h2 class="p-title">
+					{{ product_brand}}   
+		        	</h2> 
+					<h2 class="p-title" id="shoetitle" value = "{{ producttitle }}">
+					{{ producttitle}}   
+		        	</h2>  
+                    
+        <h3 class="p-price" style="font-family: Archivo";>Rs.{{ product_discount_price|intcomma}} 
+           <del style="font-family: Abel;font-size: 22px;font-weight: normal;">    Rs  {{ product_price|intcomma}}</del>         
+                    <div style="display: inline;color: orange">({{perc1}}% OFF)</div> 
+
+       </h3>
+                 	<h4 class="p-stock"><span>Inclusive of all taxes</span></h4>
+
+
+				
+
+
+					<div class="p-rating">
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o fa-fade"></i>
+					</div>
+
+
+
+					<div class="p-review">
+						<a href="">3 reviews</a>|<a href="">Add your review</a>
+					</div>
+
+				
+
+               <div class="fw-size-choose">
+						<p>Size</p>
+
+						{% if size6var == True %}
+
+						<div class="sc-item">
+							<input type="radio" name="sc" id="xs-size" value=6 >
+							<label for="xs-size">6</label>
+						</div>
+	                        {% else %}
+
+						<div class="sc-item disable">
+							<input type="radio" name="sc" id="xs-size" disabled>
+							<label for="xs-size">6</label>
+						</div>
+          					    
+          				   {% endif %}
+
+
+
+						{% if size7var == True %}
+
+						<div class="sc-item">
+							<input type="radio" name="sc" id="xs1-size" value=7 >
+							<label for="xs1-size">7</label>
+						</div>
+	                        {% else %}
+
+						<div class="sc-item disable">
+							<input type="radio" name="sc" id="xs1-size" disabled>
+							<label for="xs1-size">7</label>
+						</div>
+          					    
+          				   {% endif %}
+
+
+
+						{% if size8var == True %}
+
+						<div class="sc-item">
+							<input type="radio" name="sc" id="xs2-size" value=8 >
+							<label for="xs2-size">8</label>
+						</div>
+	                        {% else %}
+
+						<div class="sc-item disable">
+							<input type="radio" name="sc" id="xs2-size" disabled>
+							<label for="xs2-size">8</label>
+						</div>
+          					    
+          				   {% endif %}
+
+
+
+
+						{% if size9var == True %}
+
+						<div class="sc-item">
+							<input type="radio" name="sc" id="xs3-size" value=9 >
+							<label for="xs3-size">9</label>
+						</div>
+	                        {% else %}
+
+						<div class="sc-item disable">
+							<input type="radio" name="sc" id="xs3-size" disabled>
+							<label for="xs3-size">9</label>
+						</div>
+          					    
+          				   {% endif %}
+
+
+
+          				  {% if size10var == True %}
+
+						<div class="sc-item">
+							<input type="radio" name="sc" id="xs4-size" value=10 >
+							<label for="xs4-size">10</label>
+						</div>
+	                        {% else %}
+
+						<div class="sc-item disable">
+							<input type="radio" name="sc" id="xs4-size" disabled>
+							<label for="xs4-size">10</label>
+						</div>
+          					    
+          				   {% endif %}
+
+
+
+
+
+          				  {% if size11var == True %}
+
+						<div class="sc-item">
+							<input type="radio" name="sc" id="xs5-size" value=11 >
+							<label for="xs5-size">11</label>
+						</div>
+	                        {% else %}
+
+						<div class="sc-item disable">
+							<input type="radio" name="sc" id="xs5-size" disabled>
+							<label for="xs5-size">11</label>
+						</div>
+          					    
+          				   {% endif %}
+
+
+					</div>
+
+
+<!-- COLOURS RADIO BUTTONS-->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div id="small-img" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+    <ul>
+      <li>
+      	<div class="container" style="text-align: center;">
+      		
+      	<h6>Black</h6>
+
+       <a href=""> <img src="{% static 'img/color/black.jpg' %}" style="  border: 1px solid orange;" class="img-responsive inline-block" height="100px" width="70px"  alt="Responsive image" /><a>
+      	</div>
+      	
+      </li>
+      <li>
+      	<div class="container" style="text-align: center;">
+      		
+      	<h6>gray</h6>
+
+         <a href=""><img src="{% static 'img/color/gray.jpg' %}" style="  border: 1px solid orange;" class="img-responsive inline-block" height="100px" width="70px"   alt="Responsive image" /><a>
+      	</div>
+
+      </li>
+      <li>
+      	<div class="container" style="text-align: center;">
+      		
+      	<h6>white</h6>
+
+        <a href=""> <img src="{% static 'img/color/white.jpg' %}" style="  border: 1px solid orange;"  class="img-responsive inline-block" height="100px" width="70px" alt="Responsive image" /><a>
+      	</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style type="text/css">
+  
+
+  .row li {
+    display: inline-block;
+    margin-right: -20px;
+
+}
+
+ img {
+
+ 
+  display: inline-block;
+  vertical-align: middle;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+                    <div class="quantity" >
+						<p>QUANTITY</p>
+
+<select id ="selectdd" name="ddl" onchange="var y = {{ product_discount_price }};document.getElementById('demo').innerHTML=this.value*y">
+                                         <option value="1">1</option>
+                                         <option value="2">2</option>
+                                          <option value="3">3</option>
+                                         <option value="4">4</option>
+                                          <option value="5">5</option>
+                                         <option value="6">6</option>
+                                          <option value="7">7</option>
+                                         <option value="8">8</option>
+                                          <option value="9">9</option>
+                                         <option value="10">10</option>
+                                       
+   </select>
+                        
+                       </div>
+
+                        <div class="quantity" >
+						<p>TOTAL COST</p>
+
+						<p id="demo">{{product_discount_price}}</p>
+
+                        
+                       </div>
+
+
+ <a href="{% url 'cartpage' %}" style="background-color: coral" class="site-btn" id="gotocartbutton">GO TO CART</a>
+
+						     {% if user.is_authenticated %}
+
+                         
+<!--  <button type="button" class="site-btn" id="buynowbutton">BUY NOW</button> -->
+
+
+
+  <!-- Button to Open the Modal -->
+  <button type="button" id = "addtocart" class="site-btn" data-toggle="modal" data-target="#myModal" value="{{request.user.username}}"
+  onclick="addbuttonfunc(this.id);" >
+  BUY NOW </button>
+           
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal" >
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+      
+       
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         {{producttitle}} has been added to bag
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        	<a type="button" href="{% url 'cartpage' %}" class="btn btn-info btn-sm">Go to cart</a>
+          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>         						     {% endif %}
+
+    </div>           
+  </div>
+  
+
+
+
+
+                   
+
+
+<script>
+//SAME BUTTON ADJUSTMENT FUNCTION ON WINDOWS LOAD AFTER CHECKING PREVIOUS DATABASE STATE
+
+function myFunction1(v1) {
+
+if(v1 == 1){
+   	document.getElementById("addtocart").style.display='none';
+    document.getElementById("gotocartbutton").style.display='inline';
+   }
+
+if(v1 == 0){
+
+     document.getElementById("addtocart").style.display='inline';
+     document.getElementById("gotocartbutton").style.display='none';
+
+    }
+
+
+}
+
+window.myFunction1("{{ passvar }}"); 
+
+
+// BUTTON SWAP SCRIPT   
+
+
+function addbuttonfunc(recievedid) {
+
+var id1 = 'addtocart';
+var id2 = 'gotocartbutton';
+
+if (id1 == recievedid) {
+document.getElementById(recievedid).style.display='none';
+document.getElementById(id2).style.display='inline';
+}
+
+if(id2 == recievedid){
+document.getElementById(recievedid).style.display='none';
+document.getElementById(id1).style.display='inline';
+}
+
+}
+</script>
+ 
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+$('#addtocart').on('mouseenter', function() {
+       
+
+if ($('input[name="sc"]:checked').length == 0) {
+         //alert('Kindly Select Shoes Size & Quantity');
+         $.alert({
+    title: 'Alert!',
+    content: 'Kindly Select Shoes Size & Quantity!',
+});
+          } 
+ 
+
+    }); 
+</script>
+
+
+ <script type="text/javascript">
+ 	
+  $("#addtocart").click(function () {
+
+	   var size = $('input[type="radio"]:checked').val();
+
+
+       var quantity = $('#selectdd').children("option:selected").attr("value");
+
+    
+       var title = $('#shoetitle').attr("value");
+        
+        var product_price = {{ product_price }};
+        var product_discount_price = {{ product_discount_price}};
+        var Product_id = {{ itemid }};
+        var username = $(this).attr("value");
+
+
+      // alert(quantity);
+
+        $.ajax({
+           // url: '/add_to_cart/product_added_check/',
+            url: '{% url 'add_to_cart'  %}',
+            data: {
+                'title':title,
+                'product_price': product_price,
+                'product_discount_price':product_discount_price,
+                'Product_id':Product_id,
+                'username' : username,
+                'size' : size,
+                'quantity':quantity,
+
+
+            },
+            dataType: 'json',
+            success: function (data)
+             {
+                var div = data.recentcartcount;
+
+                document.getElementById("recentcheck").innerHTML = div;
+
+                       
+                }
+            });
+
+    });
+
+ </script>
+
+
+
+
+
+
+
+<!-- ADD TO CART SCRIPT  
+<script>
+
+    $("#addtocart").click(function () {
+
+	   var size = $('input[type="radio"]:checked').val();
+
+
+       var quantity = $('#selectdd').children("option:selected").attr("value");
+
+    
+       var title = $('#shoetitle').attr("value");
+        
+        var product_price = {{ product_price }};
+        var product_discount_price = {{ product_discount_price}};
+        var Product_id = {{ itemid }};
+        var username = $(this).attr("value");
+
+
+      // alert(quantity);
+
+        $.ajax({
+           // url: '/add_to_cart/product_added_check/',
+            url: '{% url 'add_to_cart'  %}',
+            data: {
+                'title':title,
+                'product_price': product_price,
+                'product_discount_price':product_discount_price,
+                'Product_id':Product_id,
+                'username' : username,
+                'size' : size,
+                'quantity':quantity,
+
+
+            },
+            dataType: 'json',
+            success: function (data)
+             {
+                var div = data.recentcartcount;
+
+                document.getElementById("recentcheck").innerHTML = div;
+
+                       
+                }
+            });
+
+    });
+
+</script>   -->
+
+
+
+ 
+<!-- JS FOR UPDATING CART VALUE prices with increase in number of products -->
+
+
+<script type="text/javascript">
+
+   function jsFunction(value) {
+   	var actual_price = {{discount_price_cart}};
+
+   	var final  = 0;
+
+    final= value * actual_price;
+
+   
+    document.getElementById('displayCount').innerHTML = final;
+    document.getElementById('displayCount1').innerHTML = final;
+
+
+}   
+
+  </script>
+
+
+
+
+					<div id="accordion" class="accordion-area">
+						<div class="panel">
+							<div class="panel-header" id="headingOne">
+								<button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">information</button>
+							</div>
+							<div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="panel-body">
+									{% autoescape off %} {{ product_display_info }} {% endautoescape %}
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-header" id="headingTwo">
+								<button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">care details </button>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+								<div class="panel-body">
+									<img src="{% static 'img/cards.png' %}" alt="">
+									{% autoescape off %} {{ product_shipping_returns_policy }} {% endautoescape %}
+
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-header" id="headingThree">
+								<button class="panel-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">shipping & Returns</button>
+							</div>
+							<div id="collapse3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="panel-body">
+									<h4>7 Days Returns</h4>
+									<p>Cash on Delivery Available<br>Home Delivery <span>3 - 4 days</span></p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="social-sharing">
+						<a href=""><i class="fa fa-facebook"></i></a>
+						<a href=""><i class="fa fa-twitter"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- product section end -->
+
+
+
+
+	<!-- RELATED PRODUCTS section -->
+	<section class="related-product-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>RELATED PRODUCTS</h2>
+			</div>
+			<div class="product-slider owl-carousel">
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="{% static image_related_product_path_1 %}" alt="">
+						<div class="pi-links">
+							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Flamboyant Pink Top </p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<div class="tag-new">New</div>
+						<img src="{% static image_related_product_path_2 %}" alt="">
+						<div class="pi-links">
+							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Black and White Stripes Dress</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="{% static image_related_product_path_3 %}" alt="">
+						<div class="pi-links">
+							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Flamboyant Pink Top </p>
+					</div>
+				</div>
+				<div class="product-item">
+						<div class="pi-pic">
+							<img src="{% static image_related_product_path_4 %}" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+								<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Flamboyant Pink Top </p>
+						</div>
+					</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="{% static image_related_product_path_5 %}" alt="">
+						<div class="pi-links">
+							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Flamboyant Pink Top </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- RELATED PRODUCTS section end -->
+
+
+
+
+
+
+
+
+
+
+
+
+		{% endblock %}

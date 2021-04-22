@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+  {% load static %}
+
+
+{% block content %}
+
+
+
+
+
+<!-- Breadcrumb Section Begin 
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <a href="#"><i class="fa fa-home"></i> Home</a>
+                        <span>Signup</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ Breadcrumb Form Section Begin -->
+    <!-- Register Section Begin -->
+    <div class="register-login-section spad" style="margin-top: 130px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="register-form">
+                        <h2>Register</h2>
+                        <form action="" method="POST" novalidate id="myform" >
+                                      {% csrf_token %}
+
+                            <div class="group-input">
+                                <label for="username">Username *</label>
+                    <input type="text" required="" name="username" maxlength="150" id="username" autofocus="" placeholder="For Example => viplavpatil91">
+
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="firstname">First Name *</label>
+                                <input type="text" id="firstname" name="firstname" placeholder="Mandatory" >
+                            </div>
+                              
+                            <div class="group-input">
+                                <label for="lastname">Last Name *</label>
+                                <input type="text" id="lastname" name="lastname" placeholder="Mandatory">
+                            </div>
+
+                            <div class="group-input">
+                                <label for="emailinp">Email *</label>
+                                <input type="email" id="emailinp" name="emailinp" placeholder="Mandatory">
+                            </div>
+
+                            <div class="group-input">
+                                <label for="signuppassword">Password *</label>
+                                <input type="password" id="signuppassword" name="signuppassword">
+                            </div>
+                            <div class="group-input">
+                                <label for="con-pass">Confirm Password *</label>
+                                <input type="password" id="con-pass" name="con-pass">
+                            </div>
+                            <button type="submit" id="register-btn1" class="site-btn register-btn">REGISTER</button>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+//username verification whether previously taken or not
+
+ $("#username").change(function () {
+   
+   var username = $("#username").val();
+
+
+
+      $.ajax({
+        url: '{% url 'signup'  %}',
+        data: {
+          'username': username,
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken) {
+            alert("A user with this username already exists.");
+            $('input').val('');    
+
+          }
+
+
+                
+
+        }
+      });
+
+    });
+
+
+
+
+
+
+//email verification whether previously taken or not
+ $("#emailinp").change(function () {
+   
+   var email = $("#emailinp").val();
+
+      $.ajax({
+        url: '{% url 'signup'  %}',
+        data: {
+          'email': email,
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken_em) {
+            alert("This Email Id has already been taken");
+            $('input').val('');    
+
+
+
+          }
+
+
+        }
+      });
+
+    });
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+                        </form>
+                        <div class="switch-login">
+                            <a href="{% url 'view_login' %}" class="or-login">Or Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Form Section End -->
+  
+  <link rel="stylesheet" href="{% static 'css/fashi/signup.css' %}"/> 
+
+
+
+
+<!-- password and confirm password validation   -->
+
+<script type="text/javascript">
+    $(function () {
+        $("#register-btn1").click(function () {
+            var password = $("#signuppassword").val();
+            var confirmPassword = $("#con-pass").val();
+            if (password != confirmPassword) {
+                alert("Passwords do not match.Kindly Retype");
+                return false;
+            }
+            return true;
+        });
+    });
+
+
+
+
+
+
+
+</script>
+
+
+
+
+      {% endblock %}

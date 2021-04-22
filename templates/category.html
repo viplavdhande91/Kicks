@@ -1,0 +1,1128 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %} 
+
+
+{% block content %}
+
+
+	<!-- Page info background-color: #CE98BE; main logo color code-->
+	<div class="page-top-info" style="padding: 5px 0 5px;">
+		<div class="container">
+			<h4>CAtegory PAge</h4>
+			<div class="site-pagination">
+				<a href="">Home</a> /
+				<a href="">Shop</a> /
+			</div>
+		</div>
+	</div>
+	<!-- Page info end -->
+
+
+
+
+
+
+	<!-- Category section -->
+<section class="category-section spad" >
+	
+<style type="text/css">
+  span.outer {
+  text-decoration: line-through;
+  margin: 5px;
+}
+a.inner {
+  color: #660066;
+}
+</style>
+
+		
+<div class="container-fluid" >
+	<div class="row"  >
+                 
+
+                 
+				<div class="col-xl-3 col-md-6"  style="margin-left: 0px;margin-right: 0px;margin-top: 130px" >
+					<div class="filter-widget"  >
+						<h2 class="fw-title" >Filters</h2>
+            <div  id="category_delete" >
+        
+            {% if checkbox_sneakers == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'sneakers' %}"   class="inner"  value ='sneakers'>Sneakers</a></span>
+             {% else %}
+
+             {% endif %}
+
+             {% if checkbox_casualshoes == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'casualshoes' %}" class="inner"  value ='casualshoes'>Casual Shoes</a></span>
+             {% else %}
+
+             {% endif %}
+
+             {% if checkbox_formalshoes == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'formalshoes' %}" class="inner"  value ='formalshoes'>Formal Shoes</a></span>
+             {% else %}
+
+             {% endif %}
+
+             {% if checkbox_studds == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'studds' %}" class="inner" value ='studds'>studds</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+               {% if checkbox_price1 == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'Rs.112 to Rs.999' %}" class="inner" value ='Rs.112 to Rs.999'>Rs.112 to Rs.999</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+               {% if checkbox_price2 == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'Rs.1000 to Rs.2147' %}" class="inner" value ='Rs.1000 to Rs.2147'>Rs.1000 to Rs.2147</a></span>
+             {% else %}
+
+             {% endif %}
+
+               {% if checkbox_price3 == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'Rs.2148 to Rs.5487' %}" class="inner" value ='Rs.2148 to Rs.5487'>Rs.2148 to Rs.5487</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+               {% if checkbox_price4 == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'Rs.5488 to Rs.9457' %}" class="inner" value ='Rs.5488 to Rs.9457'>Rs.5488 to Rs.9457</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+
+
+
+
+                {% if checkbox_turquoise == True %}          
+    <span class="outer"><a href="{% url 'category_filter_delete' 'turquoise' %}" class="inner" value ='turquoise'>Turquoise</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+   {% if checkbox_gray == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'gray' %}" class="inner" value ='gray'>Gray</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+
+   {% if checkbox_orange == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'orange' %}" class="inner" value ='orange'>Orange</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+   {% if checkbox_green == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'green' %}" class="inner" value ='green'>Green</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+   {% if checkbox_purple == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'purple' %}" class="inner" value ='purple'>Purple</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+   {% if checkbox_blue == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'blue' %}" class="inner" value ='blue'>Blue</a></span>
+             {% else %}
+
+             {% endif %}
+
+{% if checkbox_yellow == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'yellow' %}" class="inner" value ='yellow'>Yellow</a></span>
+             {% else %}
+
+             {% endif %}
+
+           
+
+
+
+
+
+
+{% if checkbox_six == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' '6' %}" class="inner" value ='6'>UK6</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+{% if checkbox_seven == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' '7' %}" class="inner" value ='7'>UK7</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+{% if checkbox_eight == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' '8' %}" class="inner" value ='8'>UK8</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+{% if checkbox_nine == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' '9' %}" class="inner" value ='9'>UK9</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+{% if checkbox_ten == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' '10' %}" class="inner" value ='10'>UK10</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+{% if checkbox_eleven == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' '11' %}" class="inner" value ='11'>UK11</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+
+
+
+
+
+
+
+{% if checkbox_nike == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'nike' %}" class="inner" value ='nike'>Nike</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+
+
+
+{% if checkbox_addidas == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'addidas' %}" class="inner" value ='addidas'>Addidas</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+
+
+
+
+{% if checkbox_sketchers == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'sketchers' %}" class="inner" value ='sketchers'>Sketchers</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+
+
+
+
+{% if checkbox_puma == True %}          
+            <span class="outer"><a href="{% url 'category_filter_delete' 'puma' %}" class="inner" value ='puma'>Puma</a></span>
+             {% else %}
+
+             {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+							
+					</div>
+
+<!-- #################################CATEGORY FILTER#########################################3               -->
+                 <div class="filter-widget"   style="margin-bottom: 0px">
+                    <h2 class="fw-title">Categories</h2>
+
+                        <div class="table-responsive" >
+                            <table class="table" style="white-space:nowrap" id="category-id"> 
+                                <tbody>
+                                	<tr>
+                                    {% if checkbox_sneakers == True %}
+                                    <td><input type="checkbox" id="cs12_0"  name="cs12" value ="sneakers" style=" height: 20px;width: 15px" checked disabled></td>
+
+                                    {% else %}
+                                    <td><input type="checkbox" id="cs12_0"  name="cs12" value ="sneakers" style=" height: 20px;width: 15px" ></td>
+
+                                    {% endif %}
+
+
+
+                                    <td><span >Sneakers</span></td>
+                                    <td><span>(54)</span></td>
+                                    </tr>
+ 
+                                    <tr>
+                                                                          {% if checkbox_casualshoes == True %}
+
+                                    <td><input type="checkbox" id="cs12_1"   name="cs12" value ="casualshoes" style=" height: 20px;width: 15px" checked disabled ></td>
+                                                                        {% else %}
+
+                                    <td><input type="checkbox" id="cs12_1"   name="cs12" value ="casualshoes" style=" height: 20px;width: 15px" ></td>
+                                                                        {% endif %}
+
+
+                                    <td><span >Casual Shoes</span></td>
+                                    <td><span>(54)</span></td>
+                                    </tr>
+
+                                    <tr>   
+                                                                 {% if checkbox_formalshoes == True %}
+
+                                    <td><input type="checkbox" id="cs12_2"  name="cs12" value ="formalshoes" style=" height: 20px;width: 15px" checked disabled></td>
+
+                                                                                                            {% else %}
+
+                                     <td><input type="checkbox" id="cs12_2"  name="cs12" value ="formalshoes" style=" height: 20px;width: 15px"  ></td>
+
+                                                                                                             {% endif %}
+
+
+                                    <td><span >Formal shoes</span></td>
+                                    <td><span>(54)</span></td>
+                                    </tr>
+
+                                    <tr>
+
+                                                                      {% if checkbox_studds == True %}
+                                    <td><input type="checkbox" id="cs12_3"  name="cs12" value ="studds" style=" height: 20px;width: 15px" checked disabled></td>
+
+                                                                              {% else %}
+
+                                    <td><input type="checkbox" id="cs12_3"  name="cs12" value ="studds" style=" height: 20px;width: 15px"  ></td>
+
+                                                                                {% endif %}
+
+
+                                    <td><span >studds</span></td>
+                                    <td><span>(3)</span></td>
+                                    </tr>
+                                </tbody>
+
+
+                            </table>
+
+                        </div>
+
+<script type="text/javascript">
+	
+//REGARDING color FILTER
+  $('#category-id').change(function () {
+   //var  category_call= $("input:checkbox[name=cs12]:checked").val();
+
+   var category_call = $('input:checkbox:checked').map((i, el) => el.value).get();
+
+    category_call = JSON.stringify(category_call);
+ //location.href  = "{% url 'category_filter'  %}";
+
+    
+$.ajax({
+           // url: '/add_to_cart/product_added_check/',
+            url: '{% url 'category_filter'  %}',
+            data: {
+                
+                'category_call' : category_call,
+
+            },
+            dataType: 'json',
+            success: function (data)
+             {
+             	
+                 
+
+
+                       
+                }
+            });
+
+   });
+
+
+</script>
+
+
+
+</div>
+
+
+
+<!-- ################################# PRICE FILTER #########################################3               -->
+
+
+
+          <div class="filter-widget"  style="margin-bottom: 0px">
+                    <h2 class="fw-title">PRICE</h2>
+
+                        <div class="table-responsive" id="price-range-id">
+                            <table class="table" style="white-space:nowrap"> 
+                                <tbody>
+                                	<tr>                                           {% if checkbox_price1 == True %}
+
+                                    <td><input type="checkbox" id="cs1_1" name="cs1" value ="Rs.112 to Rs.999" style=" height: 20px;width: 15px" checked disabled></td>
+                                                                                          {% else %}
+
+                                    <td><input type="checkbox" id="cs1_1" name="cs1" value ="Rs.112 to Rs.999" style=" height: 20px;width: 15px"></td>
+
+                                                                                          {% endif %}
+
+
+                                    <td><span >Rs.112 to Rs.999</span></td>
+                                    <td><span>(54)</span></td>
+                                    </tr>
+
+                                      
+                                    <tr>
+                                                            {% if checkbox_price2 == True %}
+                                  <td><input type="checkbox" id="cs1_2"  name="cs1" value ="Rs.1000 to Rs.2147" style=" height: 20px;width: 15px" checked disabled></td>
+                                  
+                                                                                            {% else %}
+
+                                    <td><input type="checkbox" id="cs1_2"  name="cs1" value ="Rs.1000 to Rs.2147" style=" height: 20px;width: 15px"></td>
+                                                                                      {% endif %}
+
+
+                                    <td><span >Rs.1000 to Rs.2147</span></td>
+                                    <td><span>(65)</span></td>
+                                    </tr>
+
+                                    <tr>
+
+                                                                                                  {% if checkbox_price3 == True %}
+
+                                <td><input type="checkbox" id="cs1_3"  name="cs1" value ="Rs.2148 to Rs.5487" style=" height: 20px;width: 15px" checked disabled></td>
+
+                                                                                                                            {% else %}
+
+                                    <td><input type="checkbox" id="cs1_3"  name="cs1" value ="Rs.2148 to Rs.5487" style=" height: 20px;width: 15px"></td>
+
+                                                                                                                          {% endif %}
+
+
+                                    <td><span >Rs.2148 to Rs.5487</span></td>
+                                    <td><span>(7)</span></td>
+                                    </tr>
+
+                                    <tr>
+
+                                                                        {% if checkbox_price4 == True %}
+
+                              <td><input type="checkbox" id="cs1_4"  name="cs1" value ="Rs.5488 to Rs.9457" style=" height: 20px;width: 15px" checked disabled></td>
+                                                                 {% else %}
+
+                                    <td><input type="checkbox" id="cs1_4"  name="cs1" value ="Rs.5488 to Rs.9457" style=" height: 20px;width: 15px"></td>
+                                                {% endif %}
+
+                                    <td><span >Rs.5488 to Rs.9457</span></td>
+                                    <td><span>(8)</span></td>
+                                    </tr>
+ 
+                                   
+
+
+                            </table>
+
+                        </div>
+
+<script type="text/javascript">
+	
+
+
+
+//REGARDING color FILTER
+  $('#price-range-id').change(function () {
+
+    var price_call = $('input:checkbox:checked').map((i, el) => el.value).get();
+
+    price_call = JSON.stringify(price_call);
+
+
+  //location.href = "{% url 'category_filter'  %}";
+
+
+
+//alert(price_call);
+
+$.ajax({
+           // url: '/add_to_cart/product_added_check/',
+            url: '{% url 'category_filter'  %}',
+            data: {
+                
+                'price_call' : price_call,
+
+            },
+            dataType: 'json',
+            success: function (data)
+             {
+
+
+                       
+                }
+            });
+
+   });
+
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- ################################# COLOR FILTER #########################################3               -->
+
+
+
+
+
+
+		<div class="filter-widget mb-0"  >
+						<h2 class="fw-title">color by</h2>
+
+
+
+<div class="fw-color-choose"  id="cs-item" style="margin-bottom: -40px">
+<table class="table" > 
+<tbody>
+
+<tr>
+<td><span class="dot" style=" height: 25px;width: 25px;background-color: #00ffff;border-radius: 50%;display: inline-block;"></span></td>
+<td><span>turquoise(2)</span></td>
+
+                                                          {% if checkbox_turquoise == True %}
+
+<td><input type="checkbox" id="cs_0" name="cs" value ="turquoise" style=" height: 20px;width: 15px" checked disabled></td>
+                                                                 {% else %}
+
+<td><input type="checkbox" id="cs_0" name="cs" value ="turquoise" style=" height: 20px;width: 15px"></td>
+                                                                {% endif %}
+
+</tr>
+ 
+
+ <tr>
+<td><span class="dot" style=" height: 25px;width: 25px;background-color: #bbb;border-radius: 50%;display: inline-block;"></span></td>
+<td><span style="position:relative;">Gray(2)</span></td>
+
+                                                          {% if checkbox_gray == True %}
+
+<td><input type="checkbox" id="cs_1" name="cs" value ="gray"  style=" height: 20px;width: 15px" checked disabled>
+                                                                 {% else %}
+
+<td><input type="checkbox" id="cs_1" name="cs" value ="gray"  style=" height: 20px;width: 15px"></td>
+                                                                {% endif %}
+
+</tr>
+
+<tr>
+<td><span class="dot" style=" height: 25px;width: 25px;background-color: #ff9900;border-radius: 50%;display: inline-block;"></span></td>
+<td><span style="position:relative;">Orange(2)</span></td>
+
+                                                    {% if checkbox_orange == True %}
+
+<td><input type="checkbox" id="cs_2" name="cs" value ="orange" style=" height: 20px;width: 15px" checked disabled>
+                                                                 {% else %}
+
+<td><input type="checkbox" id="cs_2" name="cs" value ="orange" style=" height: 20px;width: 15px"></td>
+                                                                {% endif %}
+
+</tr>
+
+
+<tr>
+<td><span class="dot" style=" height: 25px;width: 25px;background-color: #ffff00;border-radius: 50%;display: inline-block;"></span></td>
+<td><span style="position:relative;">yellow(2)</span></td>
+                                                                        {% if checkbox_yellow == True %}
+
+<td><input type="checkbox" id="cs_3" name="cs" value ="yellow"  style=" height: 20px;width: 15px" checked disabled>
+                                                                   {% else %}
+
+  <td><input type="checkbox" id="cs_3" name="cs" value ="yellow"  style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+</tr>
+
+
+<tr>
+<td><span class="dot" style=" height: 25px;width: 25px;background-color: #00e64d;border-radius: 50%;display: inline-block;"></span></td>
+<td><span style="position:relative;">green(2)</span></td>
+
+                                                                        {% if checkbox_green == True %}
+
+<td><input type="checkbox" id="cs_4" name="cs" value ="green"  style=" height: 20px;width: 15px" checked disabled>
+                                                                   {% else %}
+
+  <td><input type="checkbox" id="cs_4" name="cs" value ="green"  style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+</tr>
+
+
+<tr>
+<td><span class="dot" style=" height: 25px;width: 25px;background-color: #6600cc;border-radius: 50%;display: inline-block;"></span></td>
+<td><span style="position:relative;">purple(2)</span></td>
+
+                                                                        {% if checkbox_purple == True %}
+
+<td><input type="checkbox" id="cs_5" name="cs"  value ="purple" style=" height: 20px;width: 15px" checked disabled>
+                                                                   {% else %}
+
+  <td><input type="checkbox" id="cs_5" name="cs"  value ="purple" style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+</tr>
+
+
+<tr>
+<td><span class="dot" style=" height: 25px;width: 25px;background-color: #000099;border-radius: 50%;display: inline-block;"></span></td>
+<td><span style="position:relative;">blue(2)</span></td>
+
+                                                                        {% if checkbox_blue == True %}
+
+<td><input type="checkbox" id="cs_6" name="cs" value ="blue"  style=" height: 20px;width: 15px" checked disabled>
+
+                                                                   {% else %}
+
+  <td><input type="checkbox" id="cs_6" name="cs" value ="blue"  style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+</tr>  
+    
+  </tbody>
+</table>
+
+                       
+</div>
+
+<script type="text/javascript">
+	
+//REGARDING color FILTER
+  $('#cs-item').change(function () {
+    //var color_call = $("input:checkbox[name=cs]:checked").val();
+
+
+     var color_call = $('input:checkbox:checked').map((i, el) => el.value).get();
+
+    color_call = JSON.stringify(color_call);
+
+  //location.href = "{% url 'category_filter'  %}";
+
+
+$.ajax({
+           // url: '/add_to_cart/product_added_check/',
+            url: '{% url 'category_filter'  %}',
+            data: {
+                
+                'color_call' : color_call,
+
+            },
+            dataType: 'json',
+            success: function (data)
+             {
+                var div = data.recentcartcount;
+
+                document.getElementById("recentcheck").innerHTML = div;
+
+                       
+                }
+            });
+
+   });
+
+
+
+</script>
+
+						</div>
+		 
+
+<!-- ################################# SIZE FILTER #########################################3               -->
+
+
+
+					<div class="filter-widget mb-0"   >
+						<h2 class="fw-title">Size</h2>
+
+
+											
+
+						<div class="fw-size-choose" id="sc-item">
+
+						<div class="table-responsive" style="margin-bottom: -30px">
+                            <table class="table" style="white-space:nowrap"> 
+                                <tbody>
+                                	<tr>
+                                                                        {% if checkbox_six == True %}
+
+                                    <td><input type="checkbox" id="sc_0"  name="sc" value =6 style=" height: 20px;width: 15px" checked disabled></td>
+                                                                   {% else %}
+
+                                    <td><input type="checkbox" id="sc_0"  name="sc" value =6 style=" height: 20px;width: 15px"></td>
+
+                                                                   {% endif %}
+                                   <td><span >UK6</span></td>
+                                    <td><span>(44)</span></td>
+                                    </tr>
+ 
+                                    <tr>
+                                                                        {% if checkbox_seven == True %}
+
+                                    <td><input type="checkbox" id="sc_1"  name="sc" value =7 style=" height: 20px;width: 15px" checked disabled></td>
+
+                                                                    {% else %}
+                                   <td><input type="checkbox" id="sc_1"  name="sc" value =7 style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+                                    <td><span >UK7</span></td>
+                                    <td><span>(52)</span></td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                                                         {% if checkbox_eight == True %}
+                                   <td><input type="checkbox" id="sc_2"  name="sc" value =8 style=" height: 20px;width: 15px" checked disabled></td>
+
+                                                                     {% else %}
+                                  <td><input type="checkbox" id="sc_2"  name="sc" value =8 style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+                                    <td><span >UK8</span></td>
+                                    <td><span>(23)</span></td>
+
+                                    </tr>
+
+                                    <tr>
+                                                                        {% if checkbox_nine == True %}
+
+                                    <td><input type="checkbox" id="sc_3"  name="sc" value =9 style=" height: 20px;width: 15px" checked disabled></td>
+                                                                   {% else %}
+
+                                   <td><input type="checkbox" id="sc_3"  name="sc" value =9 style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+                                    <td><span >UK9</span></td>
+                                    <td><span>(34)</span></td>
+
+                                    </tr>
+
+                                     <tr>
+                                                                        {% if checkbox_ten == True %}
+
+                                    <td><input type="checkbox" id="sc_4" name="sc" value =10 style=" height: 20px;width: 15px" checked disabled></td>
+                                                                   {% else %}
+
+                                    <td><input type="checkbox" id="sc_4" name="sc" value =10 style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+                                    <td><span >UK10</span></td>
+                                    <td><span>(73)</span></td>
+
+                                    </tr>
+
+
+                                     <tr>
+
+                                                                         {% if checkbox_eleven == True %}
+                                   <td><input type="checkbox" id="sc_5"  name="sc" value =11 style=" height: 20px;width: 15px" checked disabled></td>
+                                                                   {% else %}
+
+                                    <td><input type="checkbox" id="sc_5"  name="sc" value =11 style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+                                    <td><span >UK11</span></td>
+                                    <td><span>(54)</span></td>
+
+                                    </tr>
+                                </tbody>
+
+
+                            </table>
+                        </div>
+							
+					
+						</div>
+
+<script type="text/javascript">
+	//REGARDING SIZE FILTER
+  $('#sc-item').change(function () {
+   // var size_call = $("input:checkbox[name=sc]:checked").val();
+
+    var size_call = $('input:checkbox:checked').map((i, el) => el.value).get();
+
+    size_call = JSON.stringify(size_call);
+
+
+//alert(size_call);
+
+$.ajax({
+           // url: '/add_to_cart/product_added_check/',
+            url: '{% url 'category_filter'  %}',
+            data: {
+                
+                'size_call' : size_call,
+
+            },
+            dataType: 'json',
+            success: function (data)
+             {
+                var div = data.recentcartcount;
+
+                document.getElementById("recentcheck").innerHTML = div;
+
+                       
+                }
+            });
+
+   });
+
+</script>
+
+					</div>
+
+
+
+<!-- ################################# BRAND FILTER #########################################3               -->
+
+					<div class="filter-widget"  >
+						<h2 class="fw-title">Brand</h2>
+						<div class="table-responsive" id="brand-item" style="margin-top: -35px">
+                            <table class="table" style="white-space:nowrap"> 
+                                <tbody>
+                                	<tr>                               
+                                                           {% if checkbox_nike == True %}
+
+                                    <td><input type="checkbox" id="scc_0"  name="scc" value ="nike" style=" height: 20px;width: 15px" checked disabled></td>
+                                                                   {% else %}
+
+                                    <td><input type="checkbox" id="scc_0"  name="scc" value ="nike" style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+                                    <td><span >Nike</span></td>
+                                    <td><span>(44)</span></td>
+                                    </tr>
+ 
+                                    <tr>
+                                                                       {% if checkbox_puma == True %}
+
+                                    <td><input type="checkbox" id="scc_1"  name="scc" value ="puma" style=" height: 20px;width: 15px" checked disabled></td>
+
+                                                                   {% else %}
+
+                                    <td><input type="checkbox" id="scc_1"  name="scc" value ="puma" style=" height: 20px;width: 15px"></td>
+
+                                                                  {% endif %}
+                                    <td><span >puma</span></td>
+                                    <td><span>(52)</span></td>
+                                    </tr>
+
+                                    <tr>
+                                                           {% if checkbox_addidas == True %}
+
+                                    <td><input type="checkbox" id="scc_2"  name="scc" value ="addidas" style=" height: 20px;width: 15px" checked disabled></td>
+
+                                                                   {% else %}
+
+                                    <td><input type="checkbox" id="scc_2"  name="scc" value ="addidas" style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+                                    <td><span >addidas</span></td>
+                                    <td><span>(23)</span></td>
+                                    </tr>
+
+                                    <tr>
+
+                                                            {% if checkbox_sketchers == True %}
+                                     
+                                    <td><input type="checkbox" id="scc_3"  name="scc" value ="sketchers" style=" height: 20px;width: 15px" checked disabled></td>
+
+                                                                   {% else %}
+
+                                    <td><input type="checkbox" id="scc_3"  name="scc" value ="sketchers" style=" height: 20px;width: 15px"></td>
+                                                                  {% endif %}
+
+                                    <td><span >sketchers</span></td>
+                                    <td><span>(34)</span></td>
+                                    </tr>
+
+                                    
+                                </tbody>
+
+
+                            </table>
+                        </div>
+
+
+
+        <script type="text/javascript">
+	
+//REGARDING BRAND NAME
+
+ $('#brand-item').change(function () {
+//var brand_call = $("input:checkbox[name=scc]:checked").val();
+//alert(brand_call);
+
+  var brand_call = $('input:checkbox:checked').map((i, el) => el.value).get();
+
+    brand_call = JSON.stringify(brand_call);
+
+
+$.ajax({
+           // url: '/add_to_cart/product_added_check/',
+            url: '{% url 'category_filter'  %}',
+            data: {
+                
+                'brand_call' : brand_call,
+
+            },
+            dataType: 'json',
+            success: function (data)
+             {
+                var div = data.recentcartcount;
+
+                document.getElementById("recentcheck").innerHTML = div;
+
+                       
+                }
+            });
+
+   });
+
+
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+                      <a href="{% url 'category_filter'  %}" type="button" class="btn btn-info btn-sm">Apply filters</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+					</div>
+
+<!-- #################################  FILTER END  #########################################3               -->
+
+
+
+
+
+
+                      
+
+
+
+
+
+
+				</div>
+
+
+
+
+
+
+
+
+<div class="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0" s>
+		<div class="row" >
+
+
+               <div class="row isotope-grid" id="finaldssubmit">
+                          
+
+
+                                                             {% for entry in finalds %}
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item " style="margin-right: -10px;margin-bottom: 10px" >
+                             <div class="product-item">
+								<div class="pi-pic" style=" transition: 0.3;">
+
+
+                                    {{entry.8}}
+									<a href="{% url 'productinfo' entry.0  %}">
+										<div class="block2-pic hov-img0">
+                      <img src="{% static entry.3  %}" alt="" >
+
+
+										</div>
+								    </a>
+									<div class="pi-links" style=" z-index: inherit;">
+
+								    <a href="#" class="wishlist-btn" ><i class="flaticon-heart"></i></a>
+									
+									</div>
+								</div>
+								<div class="pi-text">
+									<h6>&#8377; {{ entry.2|intcomma }}</h6>
+									<p> {{ entry.1 }}</p>
+								</div>
+							 </div>
+                </div>
+
+       
+                                                                    {% endfor %}
+
+
+
+
+
+					
+					</div>
+				</div>
+
+
+
+
+
+
+
+ <!--   <li class="page-item active"><a class="page-link" href="#">{{ finalds.number }} of {{ finalds.paginator.num_pages }}</a></li>  -->
+
+
+
+<div class="text-xs-center" >
+  <ul class="pagination" id="page_sep" style="margin-left: 250px" >
+
+    {% if finalds.has_previous %}
+        <li class="page-item"><a class="page-link" href=="?page=1">1</a></li>
+
+        <li class="page-item"><a class="page-link" href="?page={{ finalds.previous_page_number }}">Previous</a></li>
+    {% endif %}
+
+    {% for i in finalds.paginator.page_range %}
+      {% if finalds.number == i %}
+          <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+
+      {% else %}
+          <li class="page-item "><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+
+      {% endif %}
+    {% endfor %}
+
+    
+
+    {% if finalds.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ finalds.next_page_number }}">Next</a></li>
+
+        <li class="page-item"><a class="page-link" href="?page={{ finalds.paginator.num_pages }}">Last</a></li>
+
+    {% endif %}
+
+
+
+
+  </ul>
+</div>
+
+
+
+
+
+	</div>
+</div>
+</div>
+
+	</section>
+	<!-- Category section end -->
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+	
+	/*---------------image hover style--------------------*/
+.hov-img0 {
+  display: block;
+  overflow: hidden;
+}
+
+.hov-img0 img{
+  width: 100%;
+  -webkit-transition: transform 0.9s ease;
+  -o-transition: transform 0.9s ease;
+  -moz-transition: transform 0.9s ease;
+  transition: transform 0.9s ease;
+}
+
+.hov-img0:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	{% endblock %}

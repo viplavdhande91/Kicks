@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters  %}
+
+{% load humanize %} 
+{% block content %}
+
+
+<div class="container">
+	<div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+        <br><br> <h2 style="color:#0fad00">Success</h2>
+        <img src="{% static 'img/thanks.jpg' %}">
+        <h3>Dear, {{ user.get_full_name }}</h3>
+        <p style="font-size:20px;color:#5C5C5C;">Yay! your order has been succesfully placed.</p>
+        <a href="{% url 'index' %}"   class="btn btn-success">     Go to Front page      </a>
+    <br><br>
+        </div>
+                    {{dfcap}}
+
+                    {{listtosave}}
+
+                    {{recentorderid_list}}
+
+
+
+	</div>
+</div>
+
+
+            {% endblock %}

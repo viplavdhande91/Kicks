@@ -1,0 +1,137 @@
+version 1.0 :
+test cases:
+1)signup done(User Database),|| ✔
+2)log in done                || ✔         
+3)contact page working        ||✔
+4)index page image filtering is done ||✔
+
+
+version 1.1
+5)Django url Categorization for around 150 products ||✔
+6)cart update pop up   ||✔
+7)Navbar Filteration   ||✔
+8)Load more button from index work  ||✔
+9)User Account ||✔
+ 
+
+
+version 1.2
+10)add to cart and remove from diffrent users problem  || ✔
+11)bootstrap mobile index page navbar behaviour and carousal image fix  || ✔
+12)add to cart  functionality by ajax || ✔
+13)cartpage implementation || ✔
+14)prouduct to test case 102 for analyis || ✔
+
+version 1.3
+target page :product.html
+
+15)values dynamic changes fix    || ✔
+16)size dynamic adjustment fix      || ✔
+17)button addtocart==>gotocart button fix         || ✔
+
+
+
+version 1.3.1
+
+18)SHOES SIZE dynamic constraint fixed as per instock and outofstock  || ✔
+19)cartpage multi product loading  || ✔
+
+
+
+version 2.0
+20)checkout page fized   || ✔ 
+21)email sending functionality added || ✔
+22)products orgarnized || ✔
+23)cart page enhanced   || ✔
+23)order,userinfo db created  || ✔
+
+
+version 2.1 
+24)filter the images on catgory page on single filter incase of size  || ✔
+
+
+
+version 2.2
+24)json ajax "this url name has been already taken alert"  || ✔
+25)json ajax "password mismatch alert"  || ✔
+26)json ajax "email mismatch alert"  || ✔
+
+
+
+
+version 2.3
+27)filteration purely using jquery and ajax value alert catcher in all variables check at client side || ✔
+28)filter value acceptance by ajax || ✔
+
+
+
+version 2.4
+29)apply filter button set on collecting filters || ✔
+30)on reload disable apply button   || wrong logic hence discarded
+31)check all checkboxes         || ✔
+32)removal buttons on top left         || ✔
+ 
+
+
+
+version2.5
+33)removal function logic setting || ✔
+34)colour filter not working || ✔
+
+35)size filter not working   || ✔ 
+36)string comparison generating error ..use integer comparator  || not requires
+
+
+version2.6
+37) size and based sorting remain || ✔ 
+38)filter deletion working || ✔ 
+
+
+VERSION 2.7
+39)pagination implemented || ✔
+40)fixed floating headear  || ✔
+
+
+
+VERSION 2.8
+41)searching logic implemented || ✔
+42)dynamic suggestions provided on search windows using jquery autocomplete  || ✔
+43)sticky fixed header implemented || ✔
+
+
+
+VERSION 2.8.1
+44)CARTPAGE UPDATED || ✔
+45)SEACRCH WINDOW DESIGN FIXED  || ✔
+46)FRONT INDEX PAGE LAYOUT CHANGE || ✔
+
+
+
+
+
+VERSION 3.0
+44)colour combinationa availability on product page || ✔
+45)order page trxn table fix || ✔
+46)handlerreq error fix || ✔
+47)two apps mainapp ,orderapp  construct || ✔
+48)payment gatway implementation  || ✔
+
+
+VERSION 3.1
+
+49)order page categorization of all orders || ✔
+50)order info page and tracking page combined on click || ✔
+51)search cominations on string cutting basis || ✔ 
+52)2 size,3 size combination of searches ||✔
+53) shoe size strict/forced selection jquery or javascript code  || ✔
+54)checkout page strict confirm consent selction  jquery or javascript code || ✔
+
+VERSION 3.2
+55)pdf invoice link download into order info page  ||
+56)wishlist saving   ||
+57)transaction email with trxn details to owner using django mail package
+58)onsale,new attribute display fix ||
+59)cusotomer mail send functionality using django mail package || 
+60)user adresses save and display page ||
+61)Use my regular address or Use a different address jquery ajax request reply autocomplete ||
+

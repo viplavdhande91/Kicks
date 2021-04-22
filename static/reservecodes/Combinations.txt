@@ -1,0 +1,37 @@
+
+#PRODUCT SEARCH COMBINATIONS
+
+#  searchinfo.objects.all().delete()
+
+ a_list = [1, 2, 3]
+  s_list = ['sneakers','casualshoes','formalshoes','studds','turquoise','gray','orange','yellow','green','purple','blue','nike','puma','addidas','sketchers']
+  all_combinations = []
+  for r in range(len(a_list)):
+    combinations_object = itertools.combinations(s_list, r+1)
+    combinations_list = list(combinations_object)
+    all_combinations += combinations_list
+
+
+#print(all_combinations)
+
+  for x in range(len(all_combinations)):
+    if len(all_combinations[x]) == 1:
+        all_combinations[x] = all_combinations[x][0]
+
+        
+
+    if len(all_combinations[x]) == 2:
+        str2 = all_combinations[x][0]
+        str3 = all_combinations[x][1]
+        str4 = str2 + ' ' + str3
+        all_combinations[x] = str4
+        
+    
+    elif len(all_combinations[x]) == 3:
+        str5 = all_combinations[x][0]
+        str6 = all_combinations[x][1]
+        str7 = all_combinations[x][2]
+
+        str7 = str5 + ' ' + str6+ ' '+ str7
+        all_combinations[x] = str7
+  

@@ -1,0 +1,309 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters  %}
+{% load humanize %} 
+{% block content %}
+
+
+
+	<!-- Page info -->
+	<div class="page-top-info"  style="padding: 5px 0 5px">
+		<div class="container">
+			<h4>Your cart</h4>
+			<div class="site-pagination">
+				<a href="">Home</a> /
+				<a href="">Your cart</a>
+			</div>
+		</div>
+	</div>
+	<!-- Page info end -->
+
+
+
+                          			  {% if user.is_authenticated and cart_empty_hai_kya == False   %}
+
+
+
+
+<div class="px-4 px-lg-0">
+ 
+
+  <div class="pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+               
+
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="p-2 px-3 text-uppercase">Product</div>
+                  </th>
+
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Size</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Price</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Quantity</div>
+                  </th>
+
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">total</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Remove</div>
+                  </th>
+                </tr>                                             
+              </thead>
+              <tbody>                                  
+
+
+
+
+                {% for entry in finalds %}
+
+
+                <tr id="entry_remove">
+                  <th scope="row" class="border-0">
+                    <div class="p-2">
+                      <img src="{% static entry.3 %}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"> <a href="{% url 'productinfo'  entry.0  %}" class="text-dark d-inline-block align-middle">{{ entry.4 }}</a></h5><span class="text-muted font-weight-normal font-italic d-block">{{ entry.2 }}</span>
+                      </div>
+                    </div>
+                  </th>
+                   <td class="border-0 align-middle"><strong>{{ entry.6 }}</strong></td>
+
+                  <td class="border-0 align-middle"><strong>{{ entry.5|intcomma }}</strong></td>
+                  <td class="border-0 align-middle"><strong>{{ entry.7 }}</strong></td>
+
+                  <td class="border-0 align-middle"><strong>{{ entry.5|mul:entry.7   }} </strong></td>
+
+                  <td class="border-0 align-middle"><a href="{% url 'delete_from_cart'  entry.0  %}" id="deletelink" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                </tr>
+
+                                                                {% endfor %}
+
+
+
+              </tbody>
+            </table>
+          </div>
+          <!-- End -->
+
+          
+        </div>
+      </div>
+
+      <div class="row py-5 p-4 bg-white rounded shadow-sm">
+        <div class="col-lg-6">
+         
+          
+        </div>
+        <div class="col-lg-6">
+          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+          <div class="p-4">
+            <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>Rs {{ cart_sum|intcomma }}</strong></li>
+            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong> {{ shipping_charges|intcomma }} </strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong> {{ tax|intcomma }}</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                <h5 class="font-weight-bold">Rs {{ final_sum }}</h5>
+              </li>
+            </ul>
+
+
+        <button  class="btn btn-dark rounded-pill py-2 btn-block" id="checkout_button"> Procceed to checkout</button> 
+
+          
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  
+   
+
+
+
+$( "#checkout_button" ).click(function() {
+
+var orderid_random = Date.now();
+
+
+      $.ajax({
+
+
+        url: '{% url 'coupon_apply'  %}',
+        data: {
+          'orderid_random':orderid_random,
+        },
+        dataType: 'json',
+        success: function (data) {
+          if(data.is_present){
+          window.location = "{% url 'checkout' %}" ;
+
+
+          }
+
+
+        
+
+        }
+      });
+
+    });
+
+
+       
+    
+</script>
+
+
+   
+                    {% else %}
+ 
+
+
+
+<div class="px-4 px-lg-0">
+ 
+
+  <div class="pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+               
+
+
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="p-2 px-3 text-uppercase">CART STATUS</div>
+                  </th>
+                  
+                  
+                
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <th scope="row" class="border-0">
+                    <div class="p-2">
+                      <img src="{% static 'img/cart_empty.png' %}" alt="" width="200" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Cart is empty</a></h5><span class="text-muted font-weight-normal font-italic d-block">Kindly login  &  visit Product Section and add some products </span>
+                      </div>
+                    </div>
+                  </th>
+                 
+                </tr>
+
+
+
+
+              </tbody>
+            </table>
+          </div>
+          <!-- End -->
+
+
+
+          
+        </div>
+      </div>
+
+    
+
+    </div>
+  </div>
+</div>
+                      
+
+		        
+               	    {% endif %}
+
+
+
+           
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+
+
+
+
+   function jsFunction(value) {
+   	var actual_price = 300;
+
+  
+
+   var final= value * actual_price;
+
+  
+    var x = document.getElementsByClassName("total-col");
+
+  //alert(i);
+ for (var i = 0; i < 1; i++) {
+    x[i].innerHTML = final;
+ }
+ 
+  
+
+
+
+}   
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+		{% endblock %}
+
+
+
+
